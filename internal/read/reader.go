@@ -45,7 +45,7 @@ func UniqueIPv4Count(path string, shards, readers, bufMb, probeKb int) (uint64, 
 		in[i] = make(chan []uint32, 64) // deeper buffer to reduce reader stalls
 	}
 
-	// Aggregators: single-owner bitset, no locks.
+	// Aggregators: single-owner bitset.
 	var aggWG sync.WaitGroup
 	counts := make([]uint64, S)
 	aggWG.Add(S)
@@ -95,7 +95,7 @@ func UniqueIPv4Count(path string, shards, readers, bufMb, probeKb int) (uint64, 
 	rdWG.Add(len(segs))
 	for i := range segs {
 		seg := segs[i]
-		isLast := (seg.hi == size) // real last by file end
+		isLast := seg.hi == size // real last by file end
 		go func(lo, hi int64, last bool) {
 			defer rdWG.Done()
 			readSegmentReadAt(f, lo, hi, last, in, readBuf)
