@@ -2,6 +2,10 @@
 
 Count unique IPv4 addresses in very large text files (tens/hundreds of GB). One line = one IPv4.
 
+## Spoiler - results
+
+<img width="576" height="108" alt="image" src="https://github.com/user-attachments/assets/804fcfe4-1e66-467c-b8e9-92101fcc2228" />
+
 ## Build
 ```bash
 # counter
