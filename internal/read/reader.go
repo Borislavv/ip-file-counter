@@ -232,7 +232,7 @@ func readSegmentReadAt(f *os.File, lo, hi int64, isLast bool, outs []chan []uint
 					line = line[:need-1]
 				}
 				if ip, ok := parseIPv4(line); ok {
-					sid := int(uint32(ip) % uint32(len(outs)))
+					sid := int(ip % uint32(len(outs)))
 					if local[sid] == nil {
 						local[sid] = getBatch()
 					}
