@@ -4,6 +4,9 @@ Count unique IPv4 addresses in very large text files (tens/hundreds of GB). One 
 
 ## Spoiler - results
 
+I have already solved 1 Billion Rows Challenge a few years earlier. [Go to 1BRC repo](https://github.com/Borislavv/go-1brc).
+
+
 <img width="576" height="108" alt="image" src="https://github.com/user-attachments/assets/804fcfe4-1e66-467c-b8e9-92101fcc2228" />
 
 ## Build
